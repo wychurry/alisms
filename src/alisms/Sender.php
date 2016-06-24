@@ -10,5 +10,6 @@ namespace wychurry\AliSMS;
 
 
 class Sender {
-
+    public function __construct() {
+    }
 }
