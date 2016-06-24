@@ -1,4 +1,8 @@
 <?php
+
+namespace Gamrule\AliSMS\top;
+
+
 class TopLogger
 {
 	public $conf = array(
