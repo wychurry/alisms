@@ -12,6 +12,9 @@ namespace Gamrule\AliSMS;
 use Gamrule\AliSMS\top\TopClient;
 use Gamrule\AliSMS\top\AlibabaAliqinFcSmsNumSendRequest;
 
+if(!defined('TOP_SDK_WORK_DIR')){
+    define('TOP_SDK_WORK_DIR', BASE_PATH . "/storage/");
+}
 class Sender {
 
     public function __construct() {
