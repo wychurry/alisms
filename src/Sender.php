@@ -18,17 +18,17 @@ class Sender {
 
     }
 
-    public static function send($phone, $param){
+    public static function send($phone, $param, $sign_name, $template){
         $client = new TopClient();
         $client->appkey = getenv("ALISMS_KEY");
         $client->secretKey = getenv("ALISMS_SECRETKEY");
         $req = new AlibabaAliqinFcSmsNumSendRequest;
-        $req->setExtend("123456");
+        $req->setExtend("");
         $req->setSmsType("normal");
-        $req->setSmsFreeSignName(getenv("ALISMS_SIGNNAME"));
+        $req->setSmsFreeSignName($sign_name);
         $req->setSmsParam($param);
         $req->setRecNum($phone);
-        $req->setSmsTemplateCode(getenv("ALISMS_TEMPLATE"));
+        $req->setSmsTemplateCode($template);
         $resp = $client->execute($req);
         return $resp;
     }
